@@ -1,12 +1,15 @@
 package se.jensen.elias.bibliotek;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        Book bok = new Book();
+        List<Book> bocker = new ArrayList<>();
         while (true) {
             System.out.println("Biblioteket");
             System.out.println("Välj vad du vill göra:");
@@ -22,12 +25,17 @@ public class Main {
                     String name = scanner.nextLine();
                     System.out.println("ISBN: ");
                     String isbn = scanner.nextLine();
-                    Book book1 = new Book(name, isbn);
-                    System.out.println(book1);
+                    bok.setTitle(name);
+                    bok.setIsbn(isbn);
+                    bocker.add(bok);
+                    System.out.println(bok.toString());
+
                 case "2":
                     System.out.println("Ta bort bok");
                 case "3":
-                    System.out.println("Sök bok");
+                    for (Book b : bocker) {
+                        System.out.println(b.toString());
+                    }
                 case "4":
                     return;
             }
