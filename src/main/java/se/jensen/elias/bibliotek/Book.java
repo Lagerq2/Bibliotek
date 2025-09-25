@@ -3,6 +3,7 @@ package se.jensen.elias.bibliotek;
 public class Book {
     public String title;
     public String isbn;
+    public Author author;
 
     public String getTitle() {
         return title;
@@ -24,8 +25,16 @@ public class Book {
         return title + " " + isbn;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
     public String toString() {
-        return title + " " + isbn;
+        return "Titel: " + title + " skriven av: " + author + " ISBN: " + isbn;
     }
 
 

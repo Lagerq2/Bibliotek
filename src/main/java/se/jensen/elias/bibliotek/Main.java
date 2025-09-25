@@ -21,13 +21,18 @@ public class Main {
             switch (val) {
                 case "1":
                     Book bok = new Book();
+                    Author author = new Author();
                     System.out.println("Lägg Till bok:");
                     System.out.println("Namn: ");
                     String name = scanner.nextLine();
                     System.out.println("ISBN: ");
                     String isbn = scanner.nextLine();
+                    System.out.println("Författare: ");
+                    String authorName = scanner.nextLine();
                     bok.setTitle(name);
                     bok.setIsbn(isbn);
+                    author.setName(authorName);
+                    bok.setAuthor(author);
                     bocker.add(bok);
                     break;
 
